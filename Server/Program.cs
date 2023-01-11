@@ -1,6 +1,7 @@
 global using EcommerceProject.Shared;
 global using Microsoft.EntityFrameworkCore;
 global using EcommerceProject.Server.Data;
+global using EcommerceProject.Server.Services.ProductService;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,8 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IProductService, ProductServicecs>();
 
 var app = builder.Build();
 
