@@ -18,9 +18,16 @@ namespace EcommerceProject.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ServiceResponse<List<Product>>>> getProduict()
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> getProduct()
         {
             var result = await _productService.GetProductsAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("{productId}")]
+        public async Task<ActionResult<ServiceResponse<Product>>> getProduct(int productId)
+        {
+            var result = await _productService.GetProductsAsync(productId);
             return Ok(result);
         }
     }
