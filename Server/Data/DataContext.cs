@@ -4,7 +4,7 @@ namespace EcommerceProject.Server.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options) 
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
 
         }
@@ -48,7 +48,7 @@ namespace EcommerceProject.Server.Data
                     Url = "video-games"
                 }
 
-            ); 
+            );
             modelBuilder.Entity<Product>().HasData
             (
                 new Product
