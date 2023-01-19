@@ -58,6 +58,7 @@ namespace EcommerceProject.Server.Data
                     Description = "Clean Code is divided into three parts. The first describes the principles, patterns, and practices of writing clean code. The second part consists of several case studies of increasing complexity. Each case study is an exercise in cleaning up code—of transforming a code base that has some problems into one that is sound and efficient. The third part is the payoff: a single chapter containing a list of heuristics and “smells” gathered while creating the case studies. The result is a knowledge base that describes the way we think when we write, read, and clean code.",
                     ImageUrl = "https://m.media-amazon.com/images/I/41xShlnTZTL._SX258_BO1,204,203,200_QL70_ML2_.jpg",
                     CategoryId = 1,
+                    Feature = true,
                 },
                 new Product
                 {
@@ -90,6 +91,7 @@ namespace EcommerceProject.Server.Data
                     Title = "Back to the Future",
                     Description = "Back to the Future is a 1985 American science fiction film directed by Robert Zemeckis. Written by Zemeckis and Bob Gale, it stars Michael J. Fox, Christopher Lloyd, Lea Thompson, Crispin Glover, and Thomas F. Wilson. Set in 1985, the story follows Marty McFly (Fox), a teenager accidentally sent back to 1955 in a time-traveling DeLorean automobile built by his eccentric scientist friend Doctor Emmett \"Doc\" Brown (Lloyd). Trapped in the past, Marty inadvertently prevents his future parents' meeting—threatening his very existence—and is forced to reconcile the pair and somehow get back to the future.",
                     ImageUrl = "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg",
+                    Feature = true,
                 },
                 new Product
                 {
@@ -123,6 +125,7 @@ namespace EcommerceProject.Server.Data
                     Title = "Day of the Tentacle",
                     Description = "Day of the Tentacle, also known as Maniac Mansion II: Day of the Tentacle, is a 1993 graphic adventure game developed and published by LucasArts. It is the sequel to the 1987 game Maniac Mansion.",
                     ImageUrl = "https://upload.wikimedia.org/wikipedia/en/7/79/Day_of_the_Tentacle_artwork.jpg",
+                    Feature = true,
                 },
                 new Product
                 {
