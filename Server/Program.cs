@@ -2,6 +2,7 @@ global using EcommerceProject.Shared;
 global using Microsoft.EntityFrameworkCore;
 global using EcommerceProject.Server.Data;
 global using EcommerceProject.Server.Services.ProductService;
+global using EcommerceProject.Server.Services.CategoryService;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductService, ProductServicecs>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 

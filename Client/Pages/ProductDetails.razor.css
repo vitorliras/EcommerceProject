@@ -11,7 +11,16 @@
     text-align:center;
 }
 
+.original-price {
+    text-decoration: line-through;
+    /*width: 100px !important;*/
+    color: orangered !important;
+}
+
 @media (max-width: 1023.98px) {
+    /*.original-price{
+        width:100%;
+    }*/
     .media {
         flex-direction: column
     }

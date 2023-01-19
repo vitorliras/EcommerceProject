@@ -1,8 +1,9 @@
-﻿@inject  IProductService ProductService
+﻿@inject IProductService ProductService
+@implements IDisposable
 
 @if (ProductService.Products == null || ProductService.Products.Count == 0)
 {
-    <span>Loading Products...</span>
+    <span>@ProductService.Message</span>
 }
 else
 {
@@ -20,7 +21,9 @@ else
                         <h4 class="mb-0">@product.Title</h4>
                     </a>
                     <p>@product.Description</p>
-                    <h5 class="price">R$@product.Price</h5>
+                    <h5 class="price">
+                        @GetPriceText(product)
+                        </h5>
                 </div>
 
             </li>
@@ -30,10 +33,25 @@ else
 }
 
 @code {
-    private static List<Product> Products = new List<Product>();
-
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        await ProductService.GetProducts();
+        ProductService.ProductsChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        ProductService.ProductsChanged -= StateHasChanged;
+    }
+
+    private string GetPriceText(Product product)
+    {
+        var variants = product.Variants;
+        if (variants.Count == 1)
+        {
+            return $"R${variants[0].Price}";
+        }
+        decimal minPrice = variants.Min(v => v.Price);
+        return $"Starting at R${minPrice}";
+
     }
 }
