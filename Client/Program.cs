@@ -2,6 +2,7 @@ global using EcommerceProject.Shared;
 global using System.Net.Http.Json;
 global using EcommerceProject.Client.Services.ProductService;
 global using EcommerceProject.Client.Services.CategoryService;
+global using EcommerceProject.Client.Services.CartService;
 using EcommerceProject.Client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -16,5 +17,6 @@ builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 await builder.Build().RunAsync();
